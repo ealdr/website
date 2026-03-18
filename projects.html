@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+    <title>Projects — Ethan Aldred</title>
+    <meta name="description" content="Hands-on projects by Ethan Aldred across cloud computing, cybersecurity, and networking.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23141311'/><text x='16' y='22' font-family='Georgia,serif' font-size='14' font-weight='bold' fill='%23faf9f7' text-anchor='middle'>EA</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">Ethan Aldred</a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="projects.html" class="nav-link active">Projects</a>
+            <a href="homelab.html" class="nav-link">Homelab</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="theme-switch" role="button" tabindex="0" aria-label="Toggle theme">
+        <span class="theme-label">DARK</span>
+        <div class="theme-track">
+            <div class="theme-thumb"></div>
+        </div>
+        <span class="theme-label">LIGHT</span>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="projects.html" class="mobile-link active">Projects</a>
+        <a href="homelab.html" class="mobile-link">Homelab</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+    </div>
+
+    <main>
+        <section class="page-hero">
+            <p class="page-label">Work</p>
+            <h1>Projects</h1>
+            <p class="subtitle">Projects from my GitHub; hands on experience across cloud, cybersecurity, and networks.</p>
+        </section>
+
+        <section class="section pt-0">
+            <div class="project-card fade-in">
+                <div class="project-card-header">
+                    <div class="project-status status-complete">
+                        <span class="status-dot"></span> &#128204; Complete
+                    </div>
+                    <span class="project-repo">ealdr/Deploying-a-Honeypot-with-T-Pot-on-AWS</span>
+                </div>
+                <h3>Deploying a Honeypot with T-Pot on AWS</h3>
+                <p class="project-desc">This project documents the deployment of a T-Pot honeypot on an AWS EC2 instance. The goal was to capture malicious traffic and analyse attack patterns targeting cloud infrastructure.</p>
+                <div class="project-tags">
+                    <span class="project-tag">AWS</span>
+                    <span class="project-tag">EC2</span>
+                    <span class="project-tag">T-Pot</span>
+                    <span class="project-tag">Honeypot</span>
+                    <span class="project-tag">Cybersecurity</span>
+                    <span class="project-tag">Linux</span>
+                </div>
+                <a href="https://github.com/ealdr/Deploying-a-Honeypot-with-T-Pot-on-AWS" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-card-header">
+                    <div class="project-status status-complete">
+                        <span class="status-dot"></span> Complete
+                    </div>
+                    <span class="project-repo">ealdr/Pi-hole-with-Docker-on-Raspberry-Pi-Project-</span>
+                </div>
+                <h3>Pi-hole with Docker on Raspberry Pi</h3>
+                <p class="project-desc">Deploying Pi-hole as a network-wide ad blocker using Docker on a Raspberry Pi. Configured as a DNS sinkhole to block ads and trackers across all devices on the local network.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Raspberry Pi</span>
+                    <span class="project-tag">Docker</span>
+                    <span class="project-tag">Pi-hole</span>
+                    <span class="project-tag">DNS</span>
+                    <span class="project-tag">Networking</span>
+                    <span class="project-tag">Linux</span>
+                </div>
+                <a href="https://github.com/ealdr/Pi-hole-with-Docker-on-Raspberry-Pi-Project-" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-card-header">
+                    <div class="project-status status-planned">
+                        <span class="status-dot"></span> Planned
+                    </div>
+                    <span class="project-repo">ealdr/AWS-Security-Alert-Project</span>
+                </div>
+                <h3>AWS Security Alerts</h3>
+                <p class="project-desc">AWS security alert pipeline. Using; GuardDuty, CloudWatch rule, SNS topic, email and phone which is verified with GuardDuty sample alerts.</p>
+                <div class="project-tags">
+                    <span class="project-tag">AWS</span>
+                    <span class="project-tag">GuardDuty</span>
+                    <span class="project-tag">CloudWatch</span>
+                    <span class="project-tag">SNS</span>
+                    <span class="project-tag">Security</span>
+                </div>
+            </div>
+
+            <div class="github-cta fade-in">
+                <p>See all my repositories on GitHub</p>
+                <a href="https://github.com/ealdr" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit github.com/ealdr &rarr;</a>
+            </div>
+        </section>
+    </main>
+    <div class="footer-spacer"></div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-name">&copy; 2026 Ethan Aldred</p>
+            <div class="footer-links">
+                <a href="https://github.com/ealdr" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/ethan-a-a95b14324/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
