@@ -47,6 +47,20 @@ document.querySelectorAll('.nav-link, .mobile-link').forEach(l => {
     if (page === h || (page === '' && h === 'index.html')) l.classList.add('active');
 });
 
+// Project tabs
+const tabBtns = document.querySelectorAll('.tab-btn');
+if (tabBtns.length) {
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+            document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+        });
+    });
+}
+
 // Auto-update copyright year
 document.querySelectorAll('.footer-name').forEach(el => {
     el.textContent = el.textContent.replace(/\d{4}/, new Date().getFullYear());
