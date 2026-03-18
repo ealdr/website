@@ -150,8 +150,7 @@ main{flex:1} a{color:inherit;text-decoration:none}
 .tab-panel.active{display:block}
 
 /* Footer */
-.footer{position:fixed;bottom:0;left:0;right:0;z-index:50;border-top:1px solid var(--border);padding:var(--s5) var(--s8);background:var(--bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-.footer-spacer{height:56px}
+.footer{border-top:1px solid var(--border);padding:var(--s5) var(--s8);background:var(--bg)}
 .footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;justify-content:center;align-items:center;gap:var(--s5);flex-wrap:wrap}
 .footer-name{font-size:var(--text-xs);color:var(--text-muted)}
 .footer-links{display:flex;gap:var(--s5)}
@@ -199,7 +198,6 @@ main{flex:1} a{color:inherit;text-decoration:none}
 @supports(padding-top:env(safe-area-inset-top)){
     .nav{padding-top:env(safe-area-inset-top);height:calc(64px + env(safe-area-inset-top))}
     .mobile-menu{top:calc(64px + env(safe-area-inset-top))}
-    .footer{padding-bottom:calc(var(--s6) + env(safe-area-inset-bottom))}
 }
 @media(prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
