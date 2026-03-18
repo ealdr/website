@@ -46,3 +46,8 @@ document.querySelectorAll('.nav-link, .mobile-link').forEach(l => {
     const h = l.getAttribute('href');
     if (page === h || (page === '' && h === 'index.html')) l.classList.add('active');
 });
+
+// Auto-update copyright year
+document.querySelectorAll('.footer-name').forEach(el => {
+    el.innerHTML = el.innerHTML.replace(/\d{4}/, new Date().getFullYear());
+});
