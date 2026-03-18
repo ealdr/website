@@ -82,7 +82,7 @@ main{flex:1} a{color:inherit;text-decoration:none}
 /* About */
 .about-below{width:100%;max-width:600px;text-align:center;opacity:0;animation:fadeUp .5s ease forwards .6s}
 .about-below .section-header{margin-bottom:var(--s6)}
-.about-text p{margin-bottom:var(--s4);color:var(--text);font-size:var(--text-base);line-height:var(--leading-relaxed)}
+.about-text p{margin-bottom:var(--s4);color:var(--text);font-size:var(--text-md);line-height:var(--leading-relaxed)}
 .about-text p:last-child{margin-bottom:0}
 .about-interests{margin-top:var(--s7)}
 .about-interests h3{font-size:var(--text-sm);font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:var(--s4)}
@@ -182,7 +182,7 @@ main{flex:1} a{color:inherit;text-decoration:none}
     .hero-cta{max-width:100%} .btn{width:100%;padding:var(--s4) var(--s5)}
     .section,.page-hero{padding-left:var(--s4);padding-right:var(--s4)}
     .page-hero h1{font-size:var(--text-xl)} .project-card{padding:var(--s5)} .project-card h3{font-size:var(--text-lg)}
-    .about-text p{font-size:var(--text-sm)} .coming-soon-title{font-size:var(--text-2xl)} .footer{padding:var(--s4)}
+    .about-text p{font-size:var(--text-base)} .coming-soon-title{font-size:var(--text-2xl)} .footer{padding:var(--s4)}
 }
 @media(max-height:500px)and(orientation:landscape){
     .hero-stacked{padding-top:var(--s9);padding-bottom:var(--s5);gap:var(--s4)}
