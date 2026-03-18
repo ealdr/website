@@ -49,5 +49,5 @@ document.querySelectorAll('.nav-link, .mobile-link').forEach(l => {
 
 // Auto-update copyright year
 document.querySelectorAll('.footer-name').forEach(el => {
-    el.innerHTML = el.innerHTML.replace(/\d{4}/, new Date().getFullYear());
+    el.textContent = el.textContent.replace(/\d{4}/, new Date().getFullYear());
 });
