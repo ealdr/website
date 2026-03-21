@@ -41,13 +41,14 @@ main{flex:1} a{color:inherit;text-decoration:none}
 .nav-toggle.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .nav-toggle.active span:nth-child(2){opacity:0}
 .nav-toggle.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav.menu-open{border-bottom-color:transparent}
 
 .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;z-index:99;background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);flex-direction:column;padding:var(--s4) var(--s6)}
 .mobile-menu.open{display:flex}
 .mobile-link{font-size:var(--text-base);font-weight:500;padding:var(--s4) 0;color:var(--text-muted);border-bottom:1px solid var(--border);transition:color var(--transition)}
 .mobile-link:last-child{border-bottom:none}
 .mobile-link:hover,.mobile-link.active{color:var(--text-strong)}
-.mobile-link.active{font-weight:600}
+.mobile-link.active{font-weight:600;border-bottom-color:transparent}
 
 /* Theme toggle */
 .theme-switch{position:fixed;top:20px;right:var(--s6);z-index:101;display:flex;align-items:center;gap:var(--s3);cursor:pointer;user-select:none}

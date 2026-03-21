@@ -18,16 +18,19 @@ if (themeSwitch) {
 // Mobile nav
 const navToggle = document.querySelector('.nav-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
+const nav = document.querySelector('.nav');
 if (navToggle) {
     navToggle.addEventListener('click', () => {
         const open = mobileMenu.classList.toggle('open');
         navToggle.classList.toggle('active');
+        nav.classList.toggle('menu-open', open);
         navToggle.setAttribute('aria-expanded', open);
     });
     document.querySelectorAll('.mobile-link').forEach(l => {
         l.addEventListener('click', () => {
             mobileMenu.classList.remove('open');
             navToggle.classList.remove('active');
+            nav.classList.remove('menu-open');
             navToggle.setAttribute('aria-expanded', 'false');
         });
     });
