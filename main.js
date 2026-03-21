@@ -40,11 +40,11 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
 // Active nav
-const page = window.location.pathname.split('/').pop() || 'index.html';
+const path = window.location.pathname.replace(/\/$/, '') || '/';
 document.querySelectorAll('.nav-link, .mobile-link').forEach(l => {
     l.classList.remove('active');
-    const h = l.getAttribute('href');
-    if (page === h || (page === '' && h === 'index.html')) l.classList.add('active');
+    const h = l.getAttribute('href').replace(/\/$/, '') || '/';
+    if (path === h) l.classList.add('active');
 });
 
 // Project tabs
