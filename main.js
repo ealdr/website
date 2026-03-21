@@ -39,14 +39,6 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-// Active nav
-const path = window.location.pathname.replace(/\/$/, '') || '/';
-document.querySelectorAll('.nav-link, .mobile-link').forEach(l => {
-    l.classList.remove('active');
-    const h = l.getAttribute('href').replace(/\/$/, '') || '/';
-    if (path === h) l.classList.add('active');
-});
-
 // Project tabs
 const tabBtns = document.querySelectorAll('.tab-btn');
 if (tabBtns.length) {
