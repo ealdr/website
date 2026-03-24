@@ -107,7 +107,7 @@ a{color:inherit;text-decoration:none}
 .nav-logo{
     position:absolute;left:var(--s8);
     font-family:var(--font-display);font-size:.875rem;font-weight:800;
-    color:pink;text-transform:uppercase;letter-spacing:1px;
+    color:var(--text-strong);text-transform:uppercase;letter-spacing:1px;
 }
 .nav-links{display:flex;gap:var(--s7)}
 .nav-link{
@@ -194,7 +194,7 @@ a{color:inherit;text-decoration:none}
     font-family:var(--font-display);
     font-size:clamp(2.8rem,10vw,6.5rem);
     font-weight:800;
-    color:pink;
+    color:var(--text-strong);
     line-height:var(--leading-tight);
     letter-spacing:-3px;
     text-transform:uppercase;
@@ -452,7 +452,7 @@ a{color:inherit;text-decoration:none}
     max-width:var(--max-width);margin:0 auto;
     display:flex;justify-content:center;align-items:center;gap:var(--s5);flex-wrap:wrap;
 }
-.footer-name{font-family:var(--font-mono);font-size:.68rem;color:pink}
+.footer-name{font-family:var(--font-mono);font-size:.68rem;color:var(--text-muted)}
 .footer-links{display:flex;gap:var(--s5)}
 .footer-link{
     font-family:var(--font-mono);font-size:.68rem;
