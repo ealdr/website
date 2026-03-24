@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="light dark">
+    <title>Projects — Ethan Aldred</title>
+    <meta name="description" content="Hands-on projects by Ethan Aldred across cloud computing, cybersecurity, and networking.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Fira+Code:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23141311'/><text x='16' y='22' font-family='Georgia,serif' font-size='14' font-weight='bold' fill='%23faf9f7' text-anchor='middle'>EA</text></svg>">
+    <script src="theme-init.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="nav" aria-label="Main navigation">
+        <a href="/" class="nav-logo">Ethan Aldred</a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/projects" class="nav-link active">Projects</a>
+            <a href="/homelab" class="nav-link">Homelab<span class="nav-badge" aria-label="coming soon">Soon</span></a>
+            <a href="/contact" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <button class="theme-switch" aria-label="Toggle theme">
+        <span class="theme-label">DARK</span>
+        <div class="theme-track">
+            <div class="theme-thumb"></div>
+        </div>
+        <span class="theme-label">LIGHT</span>
+    </button>
+
+    <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+        <a href="/" class="mobile-link">Home</a>
+        <a href="/projects" class="mobile-link active">Projects</a>
+        <a href="/homelab" class="mobile-link">Homelab<span class="nav-badge" aria-label="coming soon">Soon</span></a>
+        <a href="/contact" class="mobile-link">Contact</a>
+    </div>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <p class="page-label">Work</p>
+            <h1>Projects</h1>
+            <p class="subtitle">Projects from my GitHub; hands-on experience across cloud, cybersecurity, and networks.</p>
+        </section>
+
+        <section class="section pt-0">
+            <div class="tabs" role="tablist">
+                <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-completed" data-tab="completed">Completed<span class="tab-count" aria-label="2 projects">2</span></button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-planned" data-tab="planned">What's Next<span class="tab-count" aria-label="7 projects">7</span></button>
+            </div>
+
+            <div class="tab-panel active" id="panel-completed" role="tabpanel">
+                <div class="project-card fade-in">
+                    <div class="project-card-header">
+                        <div class="project-status status-complete">
+                            <span class="status-dot" aria-hidden="true"></span> Complete
+                        </div>
+                    </div>
+                    <h3>Deploying a Honeypot with T-Pot on AWS</h3>
+                    <p class="project-desc">This project documents the deployment of a T-Pot honeypot on an AWS EC2 instance. The goal was to capture malicious traffic and analyse attack patterns targeting cloud infrastructure.</p>
+                    <div class="project-tags">
+                        <span class="project-tag tag-cloud">AWS</span>
+                        <span class="project-tag tag-cloud">EC2</span>
+                        <span class="project-tag tag-sec">T-Pot</span>
+                        <span class="project-tag tag-sec">Honeypot</span>
+                        <span class="project-tag tag-sec">Cybersecurity</span>
+                        <span class="project-tag tag-plat">Linux</span>
+                    </div>
+                    <a href="https://github.com/ealdr/Deploying-a-Honeypot-with-T-Pot-on-AWS" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-card-header">
+                        <div class="project-status status-complete">
+                            <span class="status-dot" aria-hidden="true"></span> Complete
+                        </div>
+                    </div>
+                    <h3>Pi-hole with Docker on Raspberry Pi</h3>
+                    <p class="project-desc">Deploying Pi-hole as a network-wide ad blocker using Docker on a Raspberry Pi. Configured as a DNS sinkhole to block ads and trackers across all devices on the local network.</p>
+                    <div class="project-tags">
+                        <span class="project-tag tag-plat">Raspberry Pi</span>
+                        <span class="project-tag tag-plat">Docker</span>
+                        <span class="project-tag tag-net">Pi-hole</span>
+                        <span class="project-tag tag-net">DNS</span>
+                        <span class="project-tag tag-net">Networking</span>
+                        <span class="project-tag tag-plat">Linux</span>
+                    </div>
+                    <a href="https://github.com/ealdr/Pi-hole-with-Docker-on-Raspberry-Pi-Project-" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="panel-planned" role="tabpanel">
+                <div class="project-card fade-in">
+                    <div class="project-card-header">
+                        <div class="project-status status-planned">
+                            <span class="status-dot" aria-hidden="true"></span> Planned
+                        </div>
+                    </div>
+                    <h3>AWS Security Alerts</h3>
+                    <p class="project-desc">AWS security alert pipeline. Using; GuardDuty, CloudWatch rule, SNS topic, email and phone which is verified with GuardDuty sample alerts.</p>
+                    <div class="project-tags">
+                        <span class="project-tag tag-cloud">AWS</span>
+                        <span class="project-tag tag-sec">GuardDuty</span>
+                        <span class="project-tag tag-cloud">CloudWatch</span>
+                        <span class="project-tag tag-cloud">SNS</span>
+                        <span class="project-tag tag-sec">Security</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-card-header">
+                        <div class="project-status status-planned">
+                            <span class="status-dot" aria-hidden="true"></span> Planned
+                        </div>
+                    </div>
+                    <h3>Terraform</h3>
+                    <p class="project-desc">Infrastructure as code using Terraform to provision and manage cloud resources on AWS. Automating repeatable deployments and environment configurations.</p>
+                    <div class="project-tags">
+                        <span class="project-tag tag-cloud">Terraform</span>
+                        <span class="project-tag tag-cloud">IaC</span>
+                        <span class="project-tag tag-cloud">AWS</span>
+                        <span class="project-tag tag-cloud">Automation</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-card-header">
+                        <div class="project-status status-planned">
+                            <span class="status-dot" aria-hidden="true"></span> Planned
+                        </div>
+                    </div>
+                    <h3>Juiceshop</h3>
+                    <p class="project-desc">Practising web application security using OWASP Juice Shop — identifying and exploiting common vulnerabilities such as SQL injection, XSS, and broken authentication.</p>
+                    <div class="project-tags">
+                        <span class="project-tag tag-sec">OWASP</span>
+                        <span class="project-tag tag-sec">Web Security</span>
+                        <span class="project-tag tag-sec">Pentesting</span>
+                        <span class="project-tag tag-sec">Vulnerability</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-card-header">
+                        <div class="project-status status-planned">
+                            <span class="status-dot" aria-hidden="true"></span> Planned
+                        </div>
+                    </div>
+                    <h3>Metasploitable</h3>
+                    <p class="project-desc">Penetration testing practice against Metasploitable — a deliberately vulnerable Linux VM. Using Metasploit Framework to discover, exploit, and document vulnerabilities.</p>
+                    <div class="project-tags">
+                        <span class="project-tag tag-sec">Metasploit</span>
+                        <span class="project-tag tag-sec">Pentesting</span>
+                        <span class="project-tag tag-sec">Vulnerability</span>
+                        <span class="project-tag tag-plat">Linux</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-card-header">
+                        <div class="project-status status-planned">
+                            <span class="status-dot" aria-hidden="true"></span> Planned
+                        </div>
+                    </div>
+                    <h3>Malware Analysis Sandbox</h3>
+                    <p class="project-desc">Building an isolated sandbox environment to safely detonate and analyse malware samples. Capturing behavioural indicators, network traffic, and system changes.</p>
+                    <div class="project-tags">
+                        <span class="project-tag tag-sec">Malware</span>
+                        <span class="project-tag tag-sec">Sandboxing</span>
+                        <span class="project-tag tag-sec">Security</span>
+                        <span class="project-tag tag-sec">Analysis</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-card-header">
+                        <div class="project-status status-planned">
+                            <span class="status-dot" aria-hidden="true"></span> Planned
+                        </div>
+                    </div>
+                    <h3>Cyber Attack Response Plan</h3>
+                    <p class="project-desc">Developing a structured incident response plan covering detection, containment, eradication, and recovery phases for common cyber attack scenarios.</p>
+                    <div class="project-tags">
+                        <span class="project-tag tag-sec">Incident Response</span>
+                        <span class="project-tag tag-sec">Security</span>
+                        <span class="project-tag tag-plat">Documentation</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-card-header">
+                        <div class="project-status status-planned">
+                            <span class="status-dot" aria-hidden="true"></span> Planned
+                        </div>
+                    </div>
+                    <h3>Wireshark</h3>
+                    <p class="project-desc">Network traffic analysis using Wireshark to capture and inspect packets, identify protocols, and detect anomalies or suspicious activity on a network.</p>
+                    <div class="project-tags">
+                        <span class="project-tag tag-net">Wireshark</span>
+                        <span class="project-tag tag-net">Network Analysis</span>
+                        <span class="project-tag tag-net">Packet Capture</span>
+                        <span class="project-tag tag-net">Networking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="github-cta fade-in">
+                <p>See all my repositories on GitHub</p>
+                <a href="https://github.com/ealdr" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit github.com/ealdr &rarr;</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-name">&copy; 2026 Ethan Aldred</p>
+            <div class="footer-links">
+                <a href="https://github.com/ealdr" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/ethan-a-a95b14324/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
