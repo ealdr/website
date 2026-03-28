@@ -114,7 +114,8 @@ if (sectionNavLinks.length) {
                 const link = document.querySelector('.section-nav-link[href="#' + entry.target.id + '"]');
                 if (link) {
                     link.classList.add('active');
-                    link.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+                    const nav = link.closest('.section-nav');
+                    if (nav) nav.scrollLeft = link.offsetLeft - nav.offsetWidth / 2 + link.offsetWidth / 2;
                 }
             }
         });
