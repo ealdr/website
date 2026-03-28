@@ -102,7 +102,49 @@ if (tabBtns.length) {
     });
 }
 
+// Section nav active state
+const sectionNavLinks = document.querySelectorAll('.section-nav-link');
+if (sectionNavLinks.length) {
+    const sectionIds = Array.from(sectionNavLinks).map(l => l.getAttribute('href').slice(1));
+    const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+    const sectionObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                sectionNavLinks.forEach(l => l.classList.remove('active'));
+                const link = document.querySelector('.section-nav-link[href="#' + entry.target.id + '"]');
+                if (link) {
+                    link.classList.add('active');
+                    const nav = link.closest('.section-nav');
+                    if (nav) nav.scrollLeft = link.offsetLeft - nav.offsetWidth / 2 + link.offsetWidth / 2;
+                }
+            }
+        });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sectionEls.forEach(el => sectionObs.observe(el));
+}
+
 // Auto-update copyright year
 document.querySelectorAll('.footer-name').forEach(el => {
     el.textContent = el.textContent.replace(/\d{4}/, new Date().getFullYear());
+});
+
+// Homelab topology toggles
+const topoState = { hw: true, sw: true, visor: true, access: true, opt: true };
+const topoGroups = {
+    hw:     ['hw-sentinel','hw-forge','hw-nexus','hw-citadel','hw-argus','hw-vault','hw-jetkvm'],
+    sw:     ['sw-sentinel','sw-forge','sw-nexus','sw-citadel','sw-argus','sw-vault','sw-jetkvm'],
+    visor:  ['visor-sentinel','visor-forge','visor-nexus','visor-citadel','visor-argus','visor-layer'],
+    access: ['access-layer'],
+    opt:    ['opt-vault','opt-jetkvm']
+};
+document.querySelectorAll('[data-tog]').forEach(el => {
+    el.addEventListener('click', () => {
+        const key = el.dataset.tog;
+        topoState[key] = !topoState[key];
+        document.getElementById('tog-' + key).classList.toggle('on', topoState[key]);
+        topoGroups[key].forEach(id => {
+            const g = document.getElementById(id);
+            if (g) g.style.opacity = topoState[key] ? '1' : '0.05';
+        });
+    });
 });
