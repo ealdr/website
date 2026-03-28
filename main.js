@@ -102,6 +102,27 @@ if (tabBtns.length) {
     });
 }
 
+// Section nav active state
+const sectionNavLinks = document.querySelectorAll('.section-nav-link');
+if (sectionNavLinks.length) {
+    const sectionIds = Array.from(sectionNavLinks).map(l => l.getAttribute('href').slice(1));
+    const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+    const sectionObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                sectionNavLinks.forEach(l => l.classList.remove('active'));
+                const link = document.querySelector('.section-nav-link[href="#' + entry.target.id + '"]');
+                if (link) {
+                    link.classList.add('active');
+                    const nav = link.closest('.section-nav');
+                    if (nav) nav.scrollLeft = link.offsetLeft - nav.offsetWidth / 2 + link.offsetWidth / 2;
+                }
+            }
+        });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sectionEls.forEach(el => sectionObs.observe(el));
+}
+
 // Auto-update copyright year
 document.querySelectorAll('.footer-name').forEach(el => {
     el.textContent = el.textContent.replace(/\d{4}/, new Date().getFullYear());
