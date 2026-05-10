@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="light dark">
+    <title>How I Built This | Ethan Aldred</title>
+    <meta name="description" content="How Ethan Aldred built his personal portfolio site.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Fira+Code:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23141311'/><text x='16' y='22' font-family='Georgia,serif' font-size='14' font-weight='bold' fill='%23faf9f7' text-anchor='middle'>EA</text></svg>">
+    <script src="theme-init.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="nav" aria-label="Main navigation">
+        <a href="/" class="nav-logo">Ethan Aldred</a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/projects" class="nav-link">Projects</a>
+            <a href="/contact" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <button class="theme-switch" aria-label="Toggle theme">
+        <span class="theme-label">DARK</span>
+        <div class="theme-track">
+            <div class="theme-thumb"></div>
+        </div>
+        <span class="theme-label">LIGHT</span>
+    </button>
+
+    <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+        <a href="/" class="mobile-link">Home</a>
+        <a href="/projects" class="mobile-link">Projects</a>
+        <a href="/contact" class="mobile-link">Contact</a>
+    </div>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <p class="page-label">Behind the scenes</p>
+            <h1>How I Built This</h1>
+            <a href="#diagram" class="btn btn-secondary" style="margin-top:var(--s5)">View architecture diagram &darr;</a>
+        </section>
+
+        <section class="section pt-0">
+            <div class="fade-in" style="max-width:760px;margin:0 auto">
+<p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s5)">The production site at ethanaldred.com is public, so anyone can visit it. But testing.ethanaldred.com runs work-in-progress changes from a separate Git branch, and I don't want half-finished features or broken layouts showing up in search results or being seen before they're ready.</p>
+                <p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s7)">So I put it behind Cloudflare Zero Trust Access, which adds an authentication step before the page even loads. The policy stacks several conditions, each one cutting out another category of unwanted traffic.</p>
+                <br>
+                <h3 style="font-family:var(--font-mono);font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-weight:normal;margin-bottom:var(--s5)">1. Approved email with OTP</h3>
+                <p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s7)">When someone tries to visit the testing subdomain, Cloudflare asks for their email address. If the email isn't on my pre-approved allowlist, they're rejected immediately. No code is sent, no access granted. If it is on the list, Cloudflare emails them a one-time password (a short numeric code that expires after a few minutes). They enter the code on the login page to prove they actually own the inbox. This stops anyone from typing in someone else's approved email and getting in.</p>
+                <br>
+                <h3 style="font-family:var(--font-mono);font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-weight:normal;margin-bottom:var(--s5)">2. IP allowlist (extra strict)</h3>
+                <p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s7)">On top of that, the policy can be tightened further by allowlisting specific IP addresses I trust, like my home network. Even if every other check passes, requests from an unrecognised IP are rejected. It's overkill for a staging site, but the whole point of zero trust is layering checks that each cover a different failure mode. The email layer protects against credential leaks, and the IP layer protects against anyone who somehow got past the email check.</p>
+            </div>
+            <br>
+            <div class="fade-in">
+                <div class="arch-topo" id="diagram">
+                  <div class="arch-flow">
+
+                    <div class="arch-box wide">
+                      <div class="arch-box-header">
+                        <div class="arch-box-title">GitHub &mdash; ealdr/website</div>
+                        <div class="arch-box-sub">source &middot; git push triggers build</div>
+                      </div>
+                      <div style="display:flex;gap:8px">
+                        <div class="arch-pill net" style="flex:1">main branch &nbsp;&middot;&nbsp; production</div>
+                        <div class="arch-pill sec" style="flex:1">testing branch &nbsp;&middot;&nbsp; staging</div>
+                      </div>
+                    </div>
+
+                    <div class="arch-conn">
+                      <div class="arch-line muted"></div>
+                      <div class="arch-conn-label">on push</div>
+                      <div class="arch-line muted"></div>
+                    </div>
+
+                    <div class="arch-box wide">
+                      <div class="arch-box-header">
+                        <div class="arch-box-title">Cloudflare Pages</div>
+                        <div class="arch-box-sub">build &middot; auto-deploy per branch</div>
+                      </div>
+                      <div class="arch-pill">website-bte.pages.dev</div>
+                      <div class="arch-pill">testing.website-bte.pages.dev</div>
+                    </div>
+
+                    <div class="arch-conn">
+                      <div class="arch-line muted"></div>
+                      <div class="arch-conn-label">cname</div>
+                      <div class="arch-line muted"></div>
+                    </div>
+
+                    <div class="arch-group" style="width:100%">
+                      <div class="arch-group-label">dns &middot; cloudflare</div>
+                      <div class="arch-row">
+                        <div class="arch-box" style="flex:1">
+                          <div class="arch-box-header">
+                            <div class="arch-box-title">ethanaldred.com</div>
+                            <div class="arch-box-sub">apex</div>
+                          </div>
+                          <div class="arch-pill net">live</div>
+                        </div>
+                        <div class="arch-box" style="flex:1">
+                          <div class="arch-box-header">
+                            <div class="arch-box-title">www.ethanaldred.com</div>
+                            <div class="arch-box-sub">alias</div>
+                          </div>
+                          <div class="arch-pill net">live</div>
+                        </div>
+                        <div class="arch-box accent" style="flex:1">
+                          <div class="arch-box-header">
+                            <div class="arch-box-title acc">testing.ethanaldred.com</div>
+                            <div class="arch-box-sub">staging &middot; gated</div>
+                          </div>
+                          <div class="arch-pill acc">private</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="arch-conn">
+                      <div class="arch-line"></div>
+                      <div class="arch-conn-label acc">access policy</div>
+                      <div class="arch-line"></div>
+                    </div>
+
+                    <div class="arch-box accent wide">
+                      <div class="arch-box-header">
+                        <div class="arch-box-title acc">Cloudflare Zero Trust</div>
+                        <div class="arch-box-sub">access control on testing subdomain</div>
+                      </div>
+                      <div style="display:flex;gap:8px">
+                        <div class="arch-pill acc" style="flex:1">require: approved email with otp</div>
+                        <div class="arch-pill acc" style="flex:1">require: my ip address</div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="arch-legend">
+                    <span class="arch-legend-item">
+                      <span class="arch-legend-swatch sw-net"></span> Production
+                    </span>
+                    <span class="arch-legend-item">
+                      <span class="arch-legend-swatch sw-sec"></span> Staging
+                    </span>
+                    <span class="arch-legend-item">
+                      <span class="arch-legend-swatch sw-acc"></span> Access control
+                    </span>
+                    <span class="arch-legend-item">
+                      <span class="arch-legend-dash"></span> Gated boundary
+                    </span>
+                  </div>
+                </div>
+            </div>
+            <br>
+            <div style="margin-top:0"><a href="/" class="btn btn-secondary">&larr; Back to Home</a></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-name">&copy; 2026 Ethan Aldred</p>
+            <div class="footer-links">
+                <a href="https://github.com/ealdr" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/ethan-a-a95b14324/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
