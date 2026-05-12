@@ -519,6 +519,7 @@ a{color:inherit;text-decoration:none}
 
 /* ─── FILTER BAR ──────────────────────────────────────────────── */
 .filter-bar{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:var(--s4) 0 var(--s6);flex-wrap:wrap;}
+.filter-bar[hidden]{display:none;}
 .filter-tags{display:flex;gap:var(--s2);flex-wrap:wrap;}
 .filter-btn{
     font-family:var(--font-mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;
