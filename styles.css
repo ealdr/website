@@ -542,6 +542,8 @@ a{color:inherit;text-decoration:none}
 .filter-btn[data-filter="cloud"].active,.filter-btn[data-filter="cloud"]:hover{color:var(--tag-cloud-text);border-color:var(--tag-cloud-border);}
 .filter-btn[data-filter="net"].active,.filter-btn[data-filter="net"]:hover{color:var(--tag-net-text);border-color:var(--tag-net-border);}
 .filter-btn[data-filter="ai"].active,.filter-btn[data-filter="ai"]:hover{color:#9b7fd4;border-color:rgba(155,127,212,.25);}
+.filter-btn[data-filter="all"],.filter-btn[data-filter="all"].active,.filter-btn[data-filter="all"]:hover{color:#f06060;border-color:currentColor;animation:rgb-sweep 2.5s linear infinite;}
+@keyframes rgb-sweep{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}
 
 /* ─── README ──────────────────────────────────────────────────── */
 .readme-wrap{font-family:var(--font-sans);}
@@ -643,6 +645,7 @@ a{color:inherit;text-decoration:none}
 @media(prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
     .fade-in,.intro-card,.about-below,.hero-cta,.divider,.page-label,.page-hero h1,.page-hero .subtitle{opacity:1;transform:none}
+    .filter-btn[data-filter="all"],.filter-btn[data-filter="all"].active{animation:none;filter:none;color:var(--text-muted);border-color:var(--border);}
     .intro-greeting::after{animation:none;opacity:1}
     html{scroll-behavior:auto}
 }
