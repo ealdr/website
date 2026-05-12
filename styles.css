@@ -243,6 +243,7 @@ a{color:inherit;text-decoration:none}
 .btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-1px)}
 .btn-secondary{background:transparent;color:var(--text);border-color:var(--border)}
 .btn-secondary:hover{border-color:var(--border-hover);color:var(--text-strong);transform:translateY(-1px)}
+.btn-sm{font-size:.65rem;padding:var(--s2) var(--s4);width:auto!important;min-height:0!important;}
 
 .divider{width:100%;height:1px;background:linear-gradient(to right,var(--border),transparent);opacity:0;animation:fadeIn .6s ease forwards .55s;margin:var(--s2) 0}
 
@@ -382,6 +383,8 @@ a{color:inherit;text-decoration:none}
     color:var(--accent);transition:color var(--transition);letter-spacing:.2px;
 }
 .project-link:hover{color:var(--accent-hover)}
+.project-card-actions{display:flex;align-items:center;gap:var(--s4);flex-wrap:wrap;margin-top:var(--s5);}
+.project-card-actions .project-link{margin-top:0;}
 .github-cta{
     text-align:center;padding:var(--s8) var(--s6);margin-top:var(--s4);
     border:1px dashed var(--border);border-radius:var(--radius-lg);
@@ -535,6 +538,28 @@ a{color:inherit;text-decoration:none}
 .sort-btn[hidden]{display:none;}
 .filter-empty{font-family:var(--font-mono);font-size:.75rem;color:var(--text-muted);padding:var(--s6) 0;display:none;}
 .filter-empty.visible{display:block;}
+.filter-btn[data-filter="sec"].active,.filter-btn[data-filter="sec"]:hover{color:var(--tag-sec-text);border-color:var(--tag-sec-border);}
+.filter-btn[data-filter="cloud"].active,.filter-btn[data-filter="cloud"]:hover{color:var(--tag-cloud-text);border-color:var(--tag-cloud-border);}
+.filter-btn[data-filter="net"].active,.filter-btn[data-filter="net"]:hover{color:var(--tag-net-text);border-color:var(--tag-net-border);}
+.filter-btn[data-filter="ai"].active,.filter-btn[data-filter="ai"]:hover{color:#9b7fd4;border-color:rgba(155,127,212,.25);}
+
+/* ─── README ──────────────────────────────────────────────────── */
+.readme-wrap{font-family:var(--font-sans);}
+.readme-wrap h2{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:var(--text-strong);margin:var(--s8) 0 var(--s4);letter-spacing:-.3px;}
+.readme-wrap h3{font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:var(--text-strong);margin:var(--s6) 0 var(--s3);}
+.readme-wrap h4,.readme-wrap h5,.readme-wrap h6{font-family:var(--font-mono);font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:1px;font-weight:normal;margin:var(--s5) 0 var(--s3);}
+.readme-wrap p{font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s5);}
+.readme-wrap ul,.readme-wrap ol{color:var(--text);font-size:var(--text-md);line-height:var(--leading-relaxed);padding-left:var(--s6);margin-bottom:var(--s5);}
+.readme-wrap li{margin-bottom:var(--s2);}
+.readme-wrap pre{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s5);overflow-x:auto;margin-bottom:var(--s5);}
+.readme-wrap pre code{font-family:var(--font-mono);font-size:.8rem;color:var(--text);background:none;border:none;padding:0;}
+.readme-wrap code{font-family:var(--font-mono);font-size:.82em;color:var(--accent);background:var(--accent-subtle);border:1px solid var(--accent-border);border-radius:3px;padding:1px 5px;}
+.readme-wrap blockquote{border-left:3px solid var(--accent);padding:var(--s3) var(--s5);margin:var(--s5) 0;background:var(--accent-subtle);}
+.readme-wrap blockquote p{margin-bottom:0;color:var(--text-muted);}
+.readme-wrap hr{border:none;border-top:1px solid var(--border);margin:var(--s7) 0;}
+.readme-wrap a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;}
+.readme-wrap a:hover{color:var(--accent-hover);}
+.readme-loading,.readme-error{font-family:var(--font-mono);font-size:.8rem;color:var(--text-muted);padding:var(--s6) 0;}
 
 /* ─── FOOTER ──────────────────────────────────────────────────── */
 .footer{border-top:1px solid var(--border);padding:var(--s5) var(--s8);background:var(--bg);position:relative;}
