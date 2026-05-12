@@ -8,7 +8,7 @@
     <meta name="color-scheme" content="light dark">
     <title>Deploying a Honeypot with T-Pot on AWS | Ethan Aldred</title>
     <meta name="description" content="Deploying a T-Pot honeypot on AWS EC2 to capture malicious traffic and analyse attack patterns targeting cloud infrastructure.">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src https://raw.githubusercontent.com; object-src 'none'; base-uri 'self'; form-action 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,11 +59,14 @@
         </section>
 
         <section class="section pt-0">
-            <div class="readme-wrap fade-in" id="readme-content"
-                 data-repo="ealdr/Deploying-a-Honeypot-with-T-Pot-on-AWS"
-                 style="max-width:760px;margin:0 auto"></div>
+            <div class="project-summary fade-in">
+                <p class="summary-label">AI Summary</p>
+                <p>T-Pot — a multi-honeypot platform running 20+ honeypot services — was deployed on an AWS EC2 instance (Ubuntu 22.04, m7i-flex.large, 128&nbsp;GB storage). Security groups were configured to lock SSH and the T-Pot dashboard to a trusted IP, while all TCP ports were left open to the internet so the honeypots could receive real attack traffic. T-Pot was installed via a cloned repository and ran entirely in Docker, with Kibana used to analyse the collected data.</p>
+                <p>After running for three days, the honeypot recorded 67,000 attacks. 72% were SSH brute-force attempts targeting the Cowrie honeypot, consistent with automated mass-scanning bots. The standout event was a coordinated surge on day two: 45,000 attacks from 519 unique IPs originating from Thailand, peaking between 06:00 and 12:00 and accounting for 67.2% of all traffic collected across the entire project.</p>
+                <p>The project built hands-on experience with AWS EC2 provisioning, security group design, Docker-based honeypot management, and threat analysis using the ELK stack. The data made clear how aggressively and continuously internet-facing SSH services are targeted by automated tooling.</p>
+            </div>
             <div style="max-width:760px;margin:var(--s8) auto 0;display:flex;gap:var(--s4);flex-wrap:wrap">
-                <a href="https://github.com/ealdr/Deploying-a-Honeypot-with-T-Pot-on-AWS" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub &rarr;</a>
+                <a href="https://github.com/ealdr/Deploying-a-Honeypot-with-T-Pot-on-AWS" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View full project on GitHub &rarr;</a>
                 <a href="/projects" class="btn btn-secondary">&larr; Back to Projects</a>
             </div>
         </section>
@@ -80,6 +83,5 @@
     </footer>
 
     <script src="/main.js"></script>
-    <script src="/project-readme.js"></script>
 </body>
 </html>

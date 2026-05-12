@@ -552,6 +552,12 @@ a{color:inherit;text-decoration:none}
   100%{filter:hue-rotate(360deg) saturate(.65) brightness(.7)}
 }
 
+/* ─── PROJECT SUMMARY ─────────────────────────────────────────── */
+.project-summary{max-width:760px;margin:0 auto;border-left:2px solid var(--accent-border);padding-left:var(--s6);}
+.project-summary p{font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s5);}
+.project-summary p:last-child{margin-bottom:0;}
+.summary-label{font-family:var(--font-mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:var(--s4)!important;}
+
 /* ─── README ──────────────────────────────────────────────────── */
 .readme-wrap{font-family:var(--font-sans);}
 .readme-wrap h2{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:var(--text-strong);margin:var(--s8) 0 var(--s4);letter-spacing:-.3px;}

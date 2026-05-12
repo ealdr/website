@@ -8,7 +8,7 @@
     <meta name="color-scheme" content="light dark">
     <title>Pi-hole with Docker on Raspberry Pi | Ethan Aldred</title>
     <meta name="description" content="Deploying Pi-hole as a network-wide ad blocker using Docker on a Raspberry Pi, configured as a DNS sinkhole.">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src https://raw.githubusercontent.com; object-src 'none'; base-uri 'self'; form-action 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,11 +59,14 @@
         </section>
 
         <section class="section pt-0">
-            <div class="readme-wrap fade-in" id="readme-content"
-                 data-repo="ealdr/Pi-hole-with-Docker-on-Raspberry-Pi-Project-"
-                 style="max-width:760px;margin:0 auto"></div>
+            <div class="project-summary fade-in">
+                <p class="summary-label">AI Summary</p>
+                <p>Pi-hole was deployed as a network-wide DNS sinkhole on a Raspberry Pi 3B using Docker, blocking ads and trackers for every device on the local network without any per-device configuration. Pi-hole works by intercepting DNS queries and dropping requests to known ad and malware domains before they resolve — covering browsers, apps, and smart devices that browser extensions can't reach. Docker Compose was used to define and manage the container, with DNS (port 53), HTTP (80), and HTTPS (443) exposed and persistent storage configured so blocklists and settings survive restarts.</p>
+                <p>Effectiveness was measured using an ad-blocking test across three configurations: router only scored 38/100, adding Pi-hole brought that to 69/100, and combining Pi-hole with a browser extension pushed it to 77/100. The results demonstrate that DNS-level blocking provides meaningful coverage on its own and stacks well with browser-based filtering.</p>
+                <p>The project built practical skills in Docker, DNS architecture, Linux system administration, and writing clear technical documentation — all running on consumer hardware headlessly managed via Pi-Connect.</p>
+            </div>
             <div style="max-width:760px;margin:var(--s8) auto 0;display:flex;gap:var(--s4);flex-wrap:wrap">
-                <a href="https://github.com/ealdr/Pi-hole-with-Docker-on-Raspberry-Pi-Project-" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub &rarr;</a>
+                <a href="https://github.com/ealdr/Pi-hole-with-Docker-on-Raspberry-Pi-Project-" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View full project on GitHub &rarr;</a>
                 <a href="/projects" class="btn btn-secondary">&larr; Back to Projects</a>
             </div>
         </section>
@@ -80,6 +83,5 @@
     </footer>
 
     <script src="/main.js"></script>
-    <script src="/project-readme.js"></script>
 </body>
 </html>
