@@ -59,12 +59,25 @@
                 <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-planned" data-tab="planned">What's Next<span class="tab-count" aria-label="7 projects">7</span></button>
             </div>
 
+            <div class="filter-bar" role="toolbar" aria-label="Filter and sort projects">
+                <div class="filter-tags">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="cloud">Cloud</button>
+                    <button class="filter-btn" data-filter="sec">Cyber</button>
+                    <button class="filter-btn" data-filter="net">Networks</button>
+                    <button class="filter-btn" data-filter="ai">AI</button>
+                </div>
+                <button class="sort-btn" id="sort-date" aria-label="Sort completed projects by date">Newest ↓</button>
+            </div>
+
             <div class="tab-panel active" id="panel-completed" role="tabpanel">
-                <div class="project-card fade-in">
+                <p class="filter-empty" id="empty-completed">No projects match this filter.</p>
+                <div class="project-card fade-in" data-date="2025-09" data-tags="cloud,sec,plat">
                     <div class="project-card-header">
                         <div class="project-status status-complete">
                             <span class="status-dot" aria-hidden="true"></span> Complete
                         </div>
+                        <span class="project-date">Sep 2025</span>
                     </div>
                     <h3>Deploying a Honeypot with T-Pot on AWS</h3>
                     <p class="project-desc">This project documents the deployment of a T-Pot honeypot on an AWS EC2 instance. The goal was to capture malicious traffic and analyse attack patterns targeting cloud infrastructure.</p>
@@ -79,11 +92,12 @@
                     <a href="https://github.com/ealdr/Deploying-a-Honeypot-with-T-Pot-on-AWS" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
                 </div>
 
-                <div class="project-card fade-in">
+                <div class="project-card fade-in" data-date="2025-08" data-tags="plat,net">
                     <div class="project-card-header">
                         <div class="project-status status-complete">
                             <span class="status-dot" aria-hidden="true"></span> Complete
                         </div>
+                        <span class="project-date">Aug 2025</span>
                     </div>
                     <h3>Pi-hole with Docker on Raspberry Pi</h3>
                     <p class="project-desc">Deploying Pi-hole as a network-wide ad blocker using Docker on a Raspberry Pi. Configured as a DNS sinkhole to block ads and trackers across all devices on the local network.</p>
@@ -100,7 +114,8 @@
             </div>
 
             <div class="tab-panel" id="panel-planned" role="tabpanel">
-                <div class="project-card fade-in">
+                <p class="filter-empty" id="empty-planned">No projects match this filter.</p>
+                <div class="project-card fade-in" data-tags="cloud,sec">
                     <div class="project-card-header">
                         <div class="project-status status-planned">
                             <span class="status-dot" aria-hidden="true"></span> Planned
@@ -117,7 +132,7 @@
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
+                <div class="project-card fade-in" data-tags="cloud,sec">
                     <div class="project-card-header">
                         <div class="project-status status-planned">
                             <span class="status-dot" aria-hidden="true"></span> Planned
@@ -133,7 +148,7 @@
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
+                <div class="project-card fade-in" data-tags="cloud">
                     <div class="project-card-header">
                         <div class="project-status status-planned">
                             <span class="status-dot" aria-hidden="true"></span> Planned
@@ -149,7 +164,7 @@
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
+                <div class="project-card fade-in" data-tags="sec">
                     <div class="project-card-header">
                         <div class="project-status status-planned">
                             <span class="status-dot" aria-hidden="true"></span> Planned
@@ -165,7 +180,7 @@
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
+                <div class="project-card fade-in" data-tags="sec,plat">
                     <div class="project-card-header">
                         <div class="project-status status-planned">
                             <span class="status-dot" aria-hidden="true"></span> Planned
@@ -181,7 +196,7 @@
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
+                <div class="project-card fade-in" data-tags="sec">
                     <div class="project-card-header">
                         <div class="project-status status-planned">
                             <span class="status-dot" aria-hidden="true"></span> Planned
@@ -197,7 +212,7 @@
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
+                <div class="project-card fade-in" data-tags="sec,plat">
                     <div class="project-card-header">
                         <div class="project-status status-planned">
                             <span class="status-dot" aria-hidden="true"></span> Planned

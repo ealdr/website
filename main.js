@@ -102,6 +102,67 @@ if (tabBtns.length) {
     });
 }
 
+// Project filter + sort
+const filterBar = document.querySelector('.filter-bar');
+if (filterBar) {
+    const filterBtns = filterBar.querySelectorAll('.filter-btn');
+    const sortBtn = document.getElementById('sort-date');
+    let activeFilter = 'all';
+    let sortNewest = true;
+
+    function applyFilterSort() {
+        const activePanel = document.querySelector('.tab-panel.active');
+        if (!activePanel) return;
+        const cards = Array.from(activePanel.querySelectorAll('.project-card'));
+        const emptyMsg = activePanel.querySelector('.filter-empty');
+
+        cards.forEach(card => {
+            const tags = (card.dataset.tags || '').split(',');
+            card.style.display = (activeFilter === 'all' || tags.includes(activeFilter)) ? '' : 'none';
+        });
+
+        const visible = cards.filter(c => c.style.display !== 'none');
+        if (emptyMsg) emptyMsg.classList.toggle('visible', visible.length === 0);
+
+        const datable = visible.filter(c => c.dataset.date);
+        if (datable.length > 1) {
+            datable.sort((a, b) => sortNewest
+                ? b.dataset.date.localeCompare(a.dataset.date)
+                : a.dataset.date.localeCompare(b.dataset.date));
+            datable.forEach(card => activePanel.appendChild(card));
+        }
+    }
+
+    function updateSortVisibility() {
+        const activePanel = document.querySelector('.tab-panel.active');
+        if (sortBtn) sortBtn.hidden = !activePanel || activePanel.id !== 'panel-completed';
+        applyFilterSort();
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeFilter = btn.dataset.filter;
+            applyFilterSort();
+        });
+    });
+
+    if (sortBtn) {
+        sortBtn.addEventListener('click', () => {
+            sortNewest = !sortNewest;
+            sortBtn.textContent = sortNewest ? 'Newest ↓' : 'Oldest ↑';
+            applyFilterSort();
+        });
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => requestAnimationFrame(updateSortVisibility));
+    });
+
+    updateSortVisibility();
+}
+
 // Section nav active state
 const sectionNavLinks = document.querySelectorAll('.section-nav-link');
 if (sectionNavLinks.length) {
