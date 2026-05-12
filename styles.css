@@ -542,7 +542,7 @@ a{color:inherit;text-decoration:none}
 .filter-btn[data-filter="cloud"].active,.filter-btn[data-filter="cloud"]:hover{color:var(--tag-cloud-text);border-color:var(--tag-cloud-border);}
 .filter-btn[data-filter="net"].active,.filter-btn[data-filter="net"]:hover{color:var(--tag-net-text);border-color:var(--tag-net-border);}
 .filter-btn[data-filter="ai"].active,.filter-btn[data-filter="ai"]:hover{color:#9b7fd4;border-color:rgba(155,127,212,.25);}
-.filter-btn[data-filter="all"].active{color:#b84848;border-color:currentColor;animation:rgb-glow 7s ease-in-out infinite;}
+.filter-btn[data-filter="all"].active{color:#b84848;border-color:currentColor;animation:rgb-glow 18s ease-in-out infinite;}
 @keyframes rgb-glow{
   0%  {filter:hue-rotate(0deg)   saturate(.65) brightness(.7)}
   25% {filter:hue-rotate(90deg)  saturate(.85) brightness(.95)}
