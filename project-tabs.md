@@ -4,37 +4,40 @@ Reference for adding projects to `projects.html`.
 
 ---
 
-## Structure
-
-Projects live inside one of two tab panels in `projects.html`:
-
-- `#panel-completed` — finished projects with a GitHub link
-- `#panel-planned` — upcoming work (the "What's Next" tab)
-
----
-
-## Card Template
+## Card Templates
 
 ### Completed project
+
 ```html
-<div class="project-card fade-in">
+<div class="project-card fade-in" data-date="YYYY-MM" data-tags="cloud,sec,plat">
     <div class="project-card-header">
         <div class="project-status status-complete">
             <span class="status-dot" aria-hidden="true"></span> Complete
         </div>
+        <span class="project-date">Mon YYYY</span>
     </div>
     <h3>Project Title</h3>
     <p class="project-desc">Short description of what the project is and what it achieves.</p>
     <div class="project-tags">
         <!-- Add tags — see Tag Categories below -->
     </div>
-    <a href="https://github.com/ealdr/REPO-NAME" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
+    <div class="project-card-actions">
+        <a href="/projects/slug" class="btn btn-primary btn-sm">View Project &rarr;</a>
+        <a href="https://github.com/ealdr/REPO-NAME" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
+    </div>
 </div>
 ```
 
+**Required attributes on the card `<div>`:**
+- `data-date="YYYY-MM"` — enables date sorting (e.g. `data-date="2025-09"`)
+- `data-tags="..."` — comma-separated filter values: `cloud`, `sec`, `net`, `plat`, `ai`
+
+**Date badge:** `<span class="project-date">` shows in the card header (e.g. `Sep 2025`).
+
 ### Planned project
+
 ```html
-<div class="project-card fade-in">
+<div class="project-card fade-in" data-tags="cloud,sec">
     <div class="project-card-header">
         <div class="project-status status-planned">
             <span class="status-dot" aria-hidden="true"></span> Planned
@@ -48,13 +51,13 @@ Projects live inside one of two tab panels in `projects.html`:
 </div>
 ```
 
-> Planned cards have no `<a class="project-link">`. Add it when the project is complete and moved to `#panel-completed`.
+Planned cards have no `data-date`, no date badge, and no `.project-card-actions`. Add these when the project is moved to completed.
 
 ---
 
 ## Tag Categories
 
-Every `<span class="project-tag">` takes one category class alongside it. Pick whichever fits best.
+Every `<span class="project-tag">` takes one category class. Pick whichever fits best.
 
 | Class | Colour | Use for |
 |---|---|---|
@@ -63,7 +66,10 @@ Every `<span class="project-tag">` takes one category class alongside it. Pick w
 | `tag-net` | Teal | Networking, DNS, Wireshark, Packet Capture, Pi-hole, Firewalls |
 | `tag-plat` | Warm neutral | Linux, Docker, Raspberry Pi, Windows, Git, Documentation |
 
+The filter buttons in `projects.html` use these same values (`data-filter="sec"` matches cards with `sec` in `data-tags`). Keep `data-tags` in sync with the actual tags shown on the card.
+
 ### Tag syntax
+
 ```html
 <span class="project-tag tag-cloud">AWS</span>
 <span class="project-tag tag-sec">Pentesting</span>
@@ -75,48 +81,57 @@ Every `<span class="project-tag">` takes one category class alongside it. Pick w
 
 ## Tab Counts
 
-After adding or moving a card, update the count badge on the tab button in `projects.html` around line 60:
+After adding or moving a card, update the count badge on the tab button in `projects.html` (around line 58). Change both the visible number and the `aria-label`:
 
 ```html
 <button ... data-tab="completed">Completed<span class="tab-count" aria-label="3 projects">3</span></button>
 <button ... data-tab="planned">What's Next<span class="tab-count" aria-label="6 projects">6</span></button>
 ```
 
-Change both the visible number and the `aria-label` value.
-
 ---
 
 ## Moving a Project from Planned → Completed
 
-1. Cut the card from `#panel-planned`
-2. Paste it into `#panel-completed` (at the top, so newest appears first)
-3. Change `status-planned` → `status-complete` and the label text `Planned` → `Complete`
-4. Add the GitHub link below the tags:
+1. Cut the card from `#panel-planned`, paste into `#panel-completed`
+2. Change `status-planned` → `status-complete` and label text `Planned` → `Complete`
+3. Add `data-date="YYYY-MM"` to the card div
+4. Add `data-tags` if not already present (check it matches the visible tags)
+5. Add the date badge inside `.project-card-header`: `<span class="project-date">Mon YYYY</span>`
+6. Replace any plain GitHub link with a `.project-card-actions` div:
    ```html
-   <a href="https://github.com/ealdr/REPO" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
+   <div class="project-card-actions">
+       <a href="/projects/slug" class="btn btn-primary btn-sm">View Project &rarr;</a>
+       <a href="https://github.com/ealdr/REPO" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
+   </div>
    ```
-5. Update both tab counts
+7. Create the detail page — follow the full workflow in `CLAUDE.md`
+8. Update both tab counts (completed +1, planned −1)
 
 ---
 
 ## Full Example (Completed)
 
 ```html
-<div class="project-card fade-in">
+<div class="project-card fade-in" data-date="2025-09" data-tags="cloud,sec,plat">
     <div class="project-card-header">
         <div class="project-status status-complete">
             <span class="status-dot" aria-hidden="true"></span> Complete
         </div>
+        <span class="project-date">Sep 2025</span>
     </div>
-    <h3>AWS VPC with Terraform</h3>
-    <p class="project-desc">Provisioning a full VPC on AWS using Terraform — subnets, route tables, security groups, and an internet gateway. Deployed and torn down repeatably via a single apply.</p>
+    <h3>Deploying a Honeypot with T-Pot on AWS</h3>
+    <p class="project-desc">Deploying a T-Pot honeypot on an AWS EC2 instance to capture malicious traffic and analyse attack patterns targeting cloud infrastructure.</p>
     <div class="project-tags">
         <span class="project-tag tag-cloud">AWS</span>
-        <span class="project-tag tag-cloud">Terraform</span>
-        <span class="project-tag tag-cloud">VPC</span>
-        <span class="project-tag tag-cloud">IaC</span>
+        <span class="project-tag tag-cloud">EC2</span>
+        <span class="project-tag tag-sec">T-Pot</span>
+        <span class="project-tag tag-sec">Honeypot</span>
+        <span class="project-tag tag-sec">Cybersecurity</span>
         <span class="project-tag tag-plat">Linux</span>
     </div>
-    <a href="https://github.com/ealdr/aws-vpc-terraform" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
+    <div class="project-card-actions">
+        <a href="/projects/deploying-a-honeypot-with-t-pot-on-aws" class="btn btn-primary btn-sm">View Project &rarr;</a>
+        <a href="https://github.com/ealdr/Deploying-a-Honeypot-with-T-Pot-on-AWS" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
+    </div>
 </div>
 ```
