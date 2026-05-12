@@ -135,7 +135,13 @@ if (filterBar) {
 
     function updateSortVisibility() {
         const activePanel = document.querySelector('.tab-panel.active');
-        if (sortBtn) sortBtn.hidden = !activePanel || activePanel.id !== 'panel-completed';
+        const isCompleted = activePanel && activePanel.id === 'panel-completed';
+        if (sortBtn) sortBtn.hidden = !isCompleted;
+        filterBar.hidden = !isCompleted;
+        if (!isCompleted) {
+            activeFilter = 'all';
+            filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
+        }
         applyFilterSort();
     }
 
