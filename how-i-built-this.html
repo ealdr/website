@@ -62,12 +62,15 @@
             <div class="fade-in" style="max-width:760px;margin:0 auto">
 <p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s5)">The production site at ethanaldred.com is public, so anyone can visit it. But testing.ethanaldred.com runs work-in-progress changes from a separate Git branch, and I don't want half-finished features or broken layouts showing up in search results or being seen before they're ready.</p>
                 <p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s7)">So I put it behind Cloudflare Zero Trust Access, which adds an authentication step before the page even loads. The policy stacks several conditions, each one cutting out another category of unwanted traffic.</p>
-                <h3 style="font-family:var(--font-mono);font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-weight:normal;margin-top:var(--s7);margin-bottom:var(--s5)">1. Approved email with OTP</h3>
+                <br>
+                <h3 style="font-family:var(--font-mono);font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-weight:normal;margin-bottom:var(--s5)">1. Approved email with OTP</h3>
                 <p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s7)">When someone tries to visit the testing subdomain, Cloudflare asks for their email address. If the email isn't on my pre-approved allowlist, they're rejected immediately. No code is sent, no access granted. If it is on the list, Cloudflare emails them a one-time password (a short numeric code that expires after a few minutes). They enter the code on the login page to prove they actually own the inbox. This stops anyone from typing in someone else's approved email and getting in.</p>
-                <h3 style="font-family:var(--font-mono);font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-weight:normal;margin-top:var(--s7);margin-bottom:var(--s5)">2. IP allowlist (extra strict)</h3>
+                <br>
+                <h3 style="font-family:var(--font-mono);font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-weight:normal;margin-bottom:var(--s5)">2. IP allowlist (extra strict)</h3>
                 <p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s7)">On top of that, the policy can be tightened further by allowlisting specific IP addresses I trust, like my home network. Even if every other check passes, requests from an unrecognised IP are rejected. It's overkill for a staging site, but the whole point of zero trust is layering checks that each cover a different failure mode. The email layer protects against credential leaks, and the IP layer protects against anyone who somehow got past the email check.</p>
             </div>
-            <div class="fade-in" style="margin-top:var(--s8)">
+            <br>
+            <div class="fade-in">
                 <div class="arch-topo" id="diagram">
                   <div class="arch-flow">
 
