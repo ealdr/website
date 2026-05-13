@@ -321,6 +321,14 @@ a{color:inherit;text-decoration:none}
     text-wrap:balance;
     opacity:0;animation:fadeUp .5s ease forwards .2s;
 }
+.page-hero-sub{
+    font-family:var(--font-display);
+    font-size:clamp(.67rem,1.83vw,1.33rem);
+    font-weight:800;color:var(--text-strong);
+    margin-bottom:var(--s3);line-height:var(--leading-tight);
+    letter-spacing:-.5px;text-transform:uppercase;
+    opacity:0;animation:fadeUp .5s ease forwards .25s;
+}
 .page-hero .subtitle{
     font-family:var(--font-sans);
     font-size:var(--text-md);color:var(--text-muted);
