@@ -327,7 +327,11 @@ a{color:inherit;text-decoration:none}
 }
 
 /* ─── PROJECT DETAIL PAGE ────────────────────────────────────── */
-body.project-detail{background:var(--bg-card)}
+.project-detail-card{
+    max-width:var(--max-width);margin:var(--s8) auto;
+    background:var(--bg-card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);overflow:hidden;
+}
 
 /* ─── PROJECT CARDS ───────────────────────────────────────────── */
 .project-card{
