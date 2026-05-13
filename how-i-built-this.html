@@ -56,7 +56,6 @@
             <p class="page-label">Behind the scenes</p>
             <h1>How I Built This Website</h1>
             <p class="page-hero-sub">Tech Stack</p>
-            <p class="page-hero-sub">Claude Code</p>
             <p class="page-hero-sub">Security &amp; Deployment</p>
             <br>
             <a href="#diagram" class="btn btn-secondary" style="margin-top:var(--s5)">View architecture diagram &darr;</a>
@@ -65,14 +64,8 @@
         <section class="section pt-0">
             <div class="fade-in" style="max-width:760px;margin:0 auto">
                 <p class="page-hero-sub" style="opacity:1;animation:none;margin-bottom:var(--s5)">Tech Stack</p>
-                <p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s5)">Plain HTML, CSS, and JavaScript — no framework, no build step, no package manager. Cloudflare Pages serves the static files directly from the GitHub repo on every push, so there's nothing to install or compile.</p>
+                <p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s5)">Plain HTML, CSS, and JavaScript. Cloudflare Pages serves the static files directly from the GitHub repo on every push, so there's nothing to install or compile.</p>
                 <p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s7)">The stylesheet uses CSS custom properties for all colours, spacing, and typography. Theme switching is handled in localStorage, with a small inline script that runs before the page renders to prevent a flash of the wrong theme. Fonts are loaded from Google Fonts: Syne 800 for headings, Fira Code for labels and UI elements, and DM Sans for body text.</p>
-            </div>
-            <br>
-            <div class="fade-in" style="max-width:760px;margin:0 auto">
-                <p class="page-hero-sub" style="opacity:1;animation:none;margin-bottom:var(--s5)">Claude Code</p>
-                <p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s5)">Claude Code (Anthropic's CLI for Claude) was used throughout the build — writing and debugging HTML, CSS, and JavaScript, catching layout issues, and keeping the design consistent across pages.</p>
-                <p style="font-family:var(--font-sans);font-size:var(--text-md);color:var(--text);line-height:var(--leading-relaxed);margin-bottom:var(--s7)">The site also has a custom Claude Code agent for adding new projects. Given a GitHub repo, it fetches the README, writes a three-paragraph AI summary, creates the detail page, adds the project card to the listing, updates the tab count badge, and commits and pushes — all in a single step.</p>
             </div>
             <br>
             <div class="fade-in" style="max-width:760px;margin:0 auto">
