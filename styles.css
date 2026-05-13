@@ -36,6 +36,7 @@
     --tag-sec-border:rgba(160,78,58,.14);--tag-sec-text:#a05840;
     --tag-net-border:rgba(48,138,108,.14);--tag-net-text:#3a8870;
     --tag-plat-border:rgba(118,98,68,.14);--tag-plat-text:#786850;
+    --tag-ai-border:rgba(75,145,55,.14);--tag-ai-text:#4a8a35;
 
     --font-display:'Syne',system-ui,sans-serif;
     --font-mono:'Fira Code','Consolas',monospace;
@@ -69,6 +70,7 @@
     --tag-sec-border:rgba(200,95,75,.2);--tag-sec-text:#c07060;
     --tag-net-border:rgba(68,168,128,.2);--tag-net-text:#58ae8e;
     --tag-plat-border:rgba(148,125,88,.2);--tag-plat-text:#9a8868;
+    --tag-ai-border:rgba(105,185,75,.2);--tag-ai-text:#78b855;
 }
 
 /* ─── RESET ───────────────────────────────────────────────────── */
@@ -377,10 +379,12 @@ a{color:inherit;text-decoration:none}
 .project-tag.tag-sec{border-color:var(--tag-sec-border);color:var(--tag-sec-text)}
 .project-tag.tag-net{border-color:var(--tag-net-border);color:var(--tag-net-text)}
 .project-tag.tag-plat{border-color:var(--tag-plat-border);color:var(--tag-plat-text)}
+.project-tag.tag-ai{border-color:var(--tag-ai-border);color:var(--tag-ai-text)}
 .tag.tag-cloud{border-color:var(--tag-cloud-border);color:var(--tag-cloud-text)}
 .tag.tag-sec{border-color:var(--tag-sec-border);color:var(--tag-sec-text)}
 .tag.tag-net{border-color:var(--tag-net-border);color:var(--tag-net-text)}
 .tag.tag-plat{border-color:var(--tag-plat-border);color:var(--tag-plat-text)}
+.tag.tag-ai{border-color:var(--tag-ai-border);color:var(--tag-ai-text)}
 .label-sec{color:var(--tag-sec-text)}
 .label-cloud{color:var(--tag-cloud-text)}
 .label-net{color:var(--tag-net-text)}
@@ -551,6 +555,7 @@ a{color:inherit;text-decoration:none}
 .filter-btn[data-filter="sec"].active,.filter-btn[data-filter="sec"]:hover{color:var(--tag-sec-text);border-color:var(--tag-sec-border);}
 .filter-btn[data-filter="cloud"].active,.filter-btn[data-filter="cloud"]:hover{color:var(--tag-cloud-text);border-color:var(--tag-cloud-border);}
 .filter-btn[data-filter="net"].active,.filter-btn[data-filter="net"]:hover{color:var(--tag-net-text);border-color:var(--tag-net-border);}
+.filter-btn[data-filter="ai"].active,.filter-btn[data-filter="ai"]:hover{color:var(--tag-ai-text);border-color:var(--tag-ai-border);}
 .filter-btn[data-filter="ai"].active,.filter-btn[data-filter="ai"]:hover{color:#9b7fd4;border-color:rgba(155,127,212,.25);}
 .filter-btn[data-filter="all"].active{color:#b84848;border-color:currentColor;animation:rgb-glow 18s ease-in-out infinite;}
 @keyframes rgb-glow{
