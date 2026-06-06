@@ -245,7 +245,7 @@ a{color:inherit;text-decoration:none}
 .btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-1px)}
 .btn-secondary{background:transparent;color:var(--text);border-color:var(--border)}
 .btn-secondary:hover{border-color:var(--border-hover);color:var(--text-strong);transform:translateY(-1px)}
-.btn-contact{border-color:#f5c518;border-style:dotted;}
+.btn-contact{border-color:#f5c518;border-style:dashed;}
 .btn-sm{font-size:.65rem;padding:var(--s2) var(--s4);width:auto!important;min-height:0!important;}
 .btn-accent,.btn-accent:hover{color:var(--accent);}
 
