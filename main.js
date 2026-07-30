@@ -50,13 +50,24 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
+// Project card reveal — outline shows immediately, content fades in with stagger
+document.body.classList.add('js-cards-reveal');
+function revealCards(panel) {
+    if (!panel) return;
+    const cards = Array.from(panel.querySelectorAll('.project-card')).filter(c => c.style.display !== 'none');
+    cards.forEach((card, i) => {
+        card.classList.remove('card-loaded');
+        setTimeout(() => card.classList.add('card-loaded'), 80 + i * 70);
+    });
+}
+
 // Project tabs — ARIA-compliant with arrow key navigation + URL sync
 const tabBtns = document.querySelectorAll('.tab-btn');
 if (tabBtns.length) {
     // Only active tab is in tab order; inactive tabs use tabindex="-1"
     tabBtns.forEach((btn, i) => btn.setAttribute('tabindex', i === 0 ? '0' : '-1'));
 
-    function activateTab(btn, updateUrl) {
+    function activateTab(btn, updateUrl, animate = true) {
         tabBtns.forEach(b => {
             b.classList.remove('active');
             b.setAttribute('aria-selected', 'false');
@@ -68,8 +79,7 @@ if (tabBtns.length) {
         btn.setAttribute('tabindex', '0');
         const panel = document.getElementById('panel-' + btn.dataset.tab);
         panel.classList.add('active');
-        // Trigger fade-in for cards that were hidden inside display:none panel
-        panel.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+        if (animate) revealCards(panel);
         // Sync tab state to URL query param
         if (updateUrl !== false) {
             const url = new URL(location.href);
@@ -81,7 +91,7 @@ if (tabBtns.length) {
     // Restore tab from URL on page load
     const urlTab = new URL(location.href).searchParams.get('tab');
     const initialBtn = urlTab ? Array.from(tabBtns).find(b => b.dataset.tab === urlTab) : null;
-    if (initialBtn) activateTab(initialBtn, false);
+    if (initialBtn) activateTab(initialBtn, false, false);
 
     tabBtns.forEach((btn, i) => {
         btn.addEventListener('click', () => activateTab(btn));
@@ -167,6 +177,7 @@ if (filterBar) {
     });
 
     updateSortVisibility();
+    revealCards(document.querySelector('.tab-panel.active'));
 }
 
 // Section nav active state
