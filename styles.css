@@ -245,6 +245,7 @@ a{color:inherit;text-decoration:none}
 .btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-1px)}
 .btn-secondary{background:transparent;color:var(--text);border-color:var(--border)}
 .btn-secondary:hover{border-color:var(--border-hover);color:var(--text-strong);transform:translateY(-1px)}
+.btn-contact{border-color:rgba(245,197,24,.4);border-style:dashed;}
 .btn-sm{font-size:.65rem;padding:var(--s2) var(--s4);width:auto!important;min-height:0!important;}
 .btn-accent,.btn-accent:hover{color:var(--accent);}
 
@@ -285,7 +286,7 @@ a{color:inherit;text-decoration:none}
 }
 
 /* ─── BUILT BTN ───────────────────────────────────────────────── */
-.built-btn{position:absolute;right:var(--s8);top:50%;transform:translateY(-50%);text-decoration:none;font-size:1.1rem;padding:var(--s1) var(--s2);line-height:1;}
+.built-btn{position:absolute;right:var(--s8);top:50%;transform:translateY(-50%);text-decoration:none;font-size:1.1rem;padding:var(--s1) var(--s2);line-height:1;display:inline-flex!important;align-items:center;justify-content:center;width:fit-content;}
 .built-btn:hover{transform:translateY(-50%);}
 
 /* ─── SECTIONS ────────────────────────────────────────────────── */
