@@ -75,7 +75,7 @@
 
 /* ─── RESET ───────────────────────────────────────────────────── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--border) var(--bg);overflow-y:scroll}
+html{font-size:21.33px;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--border) var(--bg);overflow-y:scroll}
 body{
     font-family:var(--font-sans);font-size:var(--text-base);
     background:var(--bg);color:var(--text);line-height:var(--leading-normal);
@@ -194,7 +194,7 @@ a{color:inherit;text-decoration:none}
 
 .intro-name{
     font-family:var(--font-display);
-    font-size:clamp(2.8rem,10vw,6.5rem);
+    font-size:clamp(45px,10vw,104px);
     font-weight:800;
     color:var(--text-strong);
     line-height:var(--leading-tight);
@@ -256,7 +256,7 @@ a{color:inherit;text-decoration:none}
     width:100%;
     display:grid;
     grid-template-columns:96px 1fr;
-    grid-template-areas:"label content" ". interests";
+    grid-template-areas:"label content" "interests interests";
     column-gap:var(--s9);row-gap:var(--s6);
     opacity:0;animation:fadeUp .6s ease forwards .7s;
 }
@@ -666,7 +666,7 @@ body.js-cards-reveal .project-card.card-loaded>*{opacity:1;transform:none}
 }
 @media(max-width:500px){
     .hero-stacked{padding:var(--s10) var(--s4) var(--s7);gap:var(--s5)}
-    .intro-name{font-size:clamp(2.4rem,13vw,3.5rem);letter-spacing:-1px}
+    .intro-name{font-size:clamp(38px,13vw,56px);letter-spacing:-1px}
     .hero-cta{max-width:100%}
     .btn{width:100%;padding:var(--s4) var(--s5)}
     .section,.page-hero{padding-left:var(--s4);padding-right:var(--s4)}
