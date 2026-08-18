@@ -385,9 +385,10 @@ a{color:inherit;text-decoration:none}
 }
 .project-tags{display:flex;flex-wrap:wrap;gap:var(--s2)}
 .project-tag{
-    font-family:var(--font-mono);font-size:.63rem;
-    padding:2px var(--s3);border:1px solid var(--border);
-    border-radius:4px;color:var(--text-muted);letter-spacing:.2px;
+    font-family:var(--font-mono);font-size:.61rem;
+    padding:5px var(--s4);border:1px solid var(--border);
+    border-radius:var(--radius);color:var(--text-muted);
+    letter-spacing:.3px;background:var(--bg-subtle);
 }
 .project-tag.tag-cloud{border-color:var(--tag-cloud-border);color:var(--tag-cloud-text)}
 .project-tag.tag-sec{border-color:var(--tag-sec-border);color:var(--tag-sec-text)}
