@@ -163,9 +163,9 @@ a{color:inherit;text-decoration:none}
 }
 .theme-switch:hover{border-color:var(--accent-border);background:var(--accent-subtle)}
 .theme-icon{display:none}
-.theme-icon-sun{display:block}
-[data-theme="dark"] .theme-icon-moon{display:block}
-[data-theme="dark"] .theme-icon-sun{display:none}
+.theme-icon-moon{display:block}
+[data-theme="dark"] .theme-icon-sun{display:block}
+[data-theme="dark"] .theme-icon-moon{display:none}
 
 /* ─── HERO ────────────────────────────────────────────────────── */
 .hero-stacked{
