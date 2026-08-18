@@ -283,12 +283,12 @@ a{color:inherit;text-decoration:none}
 .interest-tags{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:var(--s2)}
 .tag{
     font-family:var(--font-mono);font-size:.68rem;
-    padding:5px var(--s4);border:1px solid var(--accent-border);
-    border-radius:var(--radius);color:var(--accent);
-    letter-spacing:.3px;background:var(--accent-subtle);
+    padding:5px var(--s4);border:1px solid var(--border);
+    border-radius:var(--radius);color:var(--text-muted);
+    letter-spacing:.3px;background:var(--bg-subtle);
     transition:border-color var(--transition),color var(--transition);
 }
-.tag:hover{border-color:var(--accent);color:var(--accent-hover)}
+.tag:hover{border-color:var(--border-hover);color:var(--text)}
 
 /* ─── BUILT BTN ───────────────────────────────────────────────── */
 .built-btn{position:absolute;right:var(--s8);top:50%;transform:translateY(-50%);text-decoration:none;font-size:1.1rem;padding:var(--s1) var(--s2);line-height:1;display:inline-flex!important;align-items:center;justify-content:center;width:fit-content;}
@@ -394,11 +394,11 @@ a{color:inherit;text-decoration:none}
 .project-tag.tag-net{border-color:var(--tag-net-border);color:var(--tag-net-text)}
 .project-tag.tag-plat{border-color:var(--tag-plat-border);color:var(--tag-plat-text)}
 .project-tag.tag-ai{border-color:var(--tag-ai-border);color:var(--tag-ai-text)}
-.tag.tag-cloud{border-color:var(--tag-cloud-border);color:var(--tag-cloud-text)}
-.tag.tag-sec{border-color:var(--tag-sec-border);color:var(--tag-sec-text)}
-.tag.tag-net{border-color:var(--tag-net-border);color:var(--tag-net-text)}
-.tag.tag-plat{border-color:var(--tag-plat-border);color:var(--tag-plat-text)}
-.tag.tag-ai{border-color:var(--tag-ai-border);color:var(--tag-ai-text)}
+.tag.tag-cloud{border-color:var(--tag-cloud-border);color:var(--tag-cloud-text)}.tag.tag-cloud:hover{border-color:var(--tag-cloud-text)}
+.tag.tag-sec{border-color:var(--tag-sec-border);color:var(--tag-sec-text)}.tag.tag-sec:hover{border-color:var(--tag-sec-text)}
+.tag.tag-net{border-color:var(--tag-net-border);color:var(--tag-net-text)}.tag.tag-net:hover{border-color:var(--tag-net-text)}
+.tag.tag-plat{border-color:var(--tag-plat-border);color:var(--tag-plat-text)}.tag.tag-plat:hover{border-color:var(--tag-plat-text)}
+.tag.tag-ai{border-color:var(--tag-ai-border);color:var(--tag-ai-text)}.tag.tag-ai:hover{border-color:var(--tag-ai-text)}
 .label-sec{color:var(--tag-sec-text)}
 .label-cloud{color:var(--tag-cloud-text)}
 .label-net{color:var(--tag-net-text)}
