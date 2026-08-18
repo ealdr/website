@@ -282,7 +282,7 @@ a{color:inherit;text-decoration:none}
 }
 .interest-tags{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:var(--s2)}
 .tag{
-    font-family:var(--font-mono);font-size:.68rem;
+    font-family:var(--font-mono);font-size:.61rem;
     padding:5px var(--s4);border:1px solid var(--border);
     border-radius:var(--radius);color:var(--text-muted);
     letter-spacing:.3px;background:var(--bg-subtle);
